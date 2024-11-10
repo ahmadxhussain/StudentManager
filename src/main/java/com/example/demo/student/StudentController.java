@@ -27,7 +27,21 @@ public class StudentController {
         students.forEach(studentService::addNewStudent);
     }
 
+    @DeleteMapping(path = "{studentId}")
+    public void deleteStudent(@PathVariable("studentId") Long studentId){
+        studentService.deleteStudent(studentId);
+    }
 
+    //on url basicaly just instert after local hose /(id)
+    //if changes are needed add the request if name and/or email needs changing
+    //then update if needed
+    @PutMapping(path = "{studentId}")
+    public void updateStudent(
+            @PathVariable("studentId") Long studentId,
+            @RequestParam(required = false) String name,
+            @RequestParam(required = false) String email){
+        studentService.updateStudent(studentId, name, email);
+    }
 
 
 }
