@@ -1,0 +1,58 @@
+<html>
+<head>
+<title>StudentConfig.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #6aab73;}
+.s4 { color: #2aacb8;}
+.ln { color: #4b5059; font-weight: normal; font-style: normal; }
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+StudentConfig.java</font>
+</center></td></tr></table>
+<pre><a name="l1"><span class="ln">1    </span></a><span class="s0">package </span><span class="s1">com</span><span class="s2">.</span><span class="s1">example</span><span class="s2">.</span><span class="s1">demo</span><span class="s2">.</span><span class="s1">student</span><span class="s2">;</span>
+<a name="l2"><span class="ln">2    </span></a>
+<a name="l3"><span class="ln">3    </span></a><span class="s0">import </span><span class="s1">org</span><span class="s2">.</span><span class="s1">springframework</span><span class="s2">.</span><span class="s1">boot</span><span class="s2">.</span><span class="s1">CommandLineRunner</span><span class="s2">;</span>
+<a name="l4"><span class="ln">4    </span></a><span class="s0">import </span><span class="s1">org</span><span class="s2">.</span><span class="s1">springframework</span><span class="s2">.</span><span class="s1">context</span><span class="s2">.</span><span class="s1">annotation</span><span class="s2">.</span><span class="s1">Bean</span><span class="s2">;</span>
+<a name="l5"><span class="ln">5    </span></a><span class="s0">import </span><span class="s1">org</span><span class="s2">.</span><span class="s1">springframework</span><span class="s2">.</span><span class="s1">context</span><span class="s2">.</span><span class="s1">annotation</span><span class="s2">.</span><span class="s1">Configuration</span><span class="s2">;</span>
+<a name="l6"><span class="ln">6    </span></a>
+<a name="l7"><span class="ln">7    </span></a><span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">time</span><span class="s2">.</span><span class="s1">LocalDate</span><span class="s2">;</span>
+<a name="l8"><span class="ln">8    </span></a><span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">time</span><span class="s2">.</span><span class="s1">Month</span><span class="s2">;</span>
+<a name="l9"><span class="ln">9    </span></a><span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">util</span><span class="s2">.</span><span class="s1">List</span><span class="s2">;</span>
+<a name="l10"><span class="ln">10   </span></a>
+<a name="l11"><span class="ln">11   </span></a><span class="s0">import static </span><span class="s1">java</span><span class="s2">.</span><span class="s1">time</span><span class="s2">.</span><span class="s1">Month</span><span class="s2">.</span><span class="s1">JANUARY</span><span class="s2">;</span>
+<a name="l12"><span class="ln">12   </span></a>
+<a name="l13"><span class="ln">13   </span></a><span class="s1">@Configuration</span>
+<a name="l14"><span class="ln">14   </span></a><span class="s0">public class </span><span class="s1">StudentConfig </span><span class="s2">{</span>
+<a name="l15"><span class="ln">15   </span></a>
+<a name="l16"><span class="ln">16   </span></a>    <span class="s1">@Bean</span>
+<a name="l17"><span class="ln">17   </span></a>    <span class="s1">CommandLineRunner commandLineRunner</span><span class="s2">(</span><span class="s1">StudentRepository repository</span><span class="s2">){</span>
+<a name="l18"><span class="ln">18   </span></a>        <span class="s0">return </span><span class="s1">args -&gt;</span><span class="s2">{</span>
+<a name="l19"><span class="ln">19   </span></a>            <span class="s1">Student jamal </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Student</span><span class="s2">(</span>
+<a name="l20"><span class="ln">20   </span></a>                    <span class="s3">&quot;Jamal&quot;</span><span class="s2">,</span>
+<a name="l21"><span class="ln">21   </span></a>                    <span class="s3">&quot;jamal.jones@gmail.com&quot;</span><span class="s2">,</span>
+<a name="l22"><span class="ln">22   </span></a>                    <span class="s1">LocalDate</span><span class="s2">.</span><span class="s1">of</span><span class="s2">(</span><span class="s4">2000</span><span class="s2">, </span><span class="s1">JANUARY</span><span class="s2">, </span><span class="s4">5</span><span class="s2">)</span>
+<a name="l23"><span class="ln">23   </span></a>            <span class="s2">);</span>
+<a name="l24"><span class="ln">24   </span></a>            <span class="s1">Student alex </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Student</span><span class="s2">(</span>
+<a name="l25"><span class="ln">25   </span></a>                    <span class="s3">&quot;Alex&quot;</span><span class="s2">,</span>
+<a name="l26"><span class="ln">26   </span></a>                    <span class="s3">&quot;alex.jones@gmail.com&quot;</span><span class="s2">,</span>
+<a name="l27"><span class="ln">27   </span></a>                    <span class="s1">LocalDate</span><span class="s2">.</span><span class="s1">of</span><span class="s2">(</span><span class="s4">2004</span><span class="s2">, </span><span class="s1">JANUARY</span><span class="s2">, </span><span class="s4">5</span><span class="s2">)</span>
+<a name="l28"><span class="ln">28   </span></a>            <span class="s2">);</span>
+<a name="l29"><span class="ln">29   </span></a>
+<a name="l30"><span class="ln">30   </span></a>            <span class="s1">repository</span><span class="s2">.</span><span class="s1">saveAll</span><span class="s2">(</span>
+<a name="l31"><span class="ln">31   </span></a>                    <span class="s1">List</span><span class="s2">.</span><span class="s1">of</span><span class="s2">(</span><span class="s1">jamal</span><span class="s2">, </span><span class="s1">alex</span><span class="s2">)</span>
+<a name="l32"><span class="ln">32   </span></a>            <span class="s2">);</span>
+<a name="l33"><span class="ln">33   </span></a>
+<a name="l34"><span class="ln">34   </span></a>        <span class="s2">};</span>
+<a name="l35"><span class="ln">35   </span></a>    <span class="s2">}</span>
+<a name="l36"><span class="ln">36   </span></a><span class="s2">}</span>
+<a name="l37"><span class="ln">37   </span></a></pre>
+</body>
+</html>
